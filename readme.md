@@ -54,3 +54,12 @@ This is the hw03 sample. Please follow the steps below.
 --------------------
 
 **★★★ Please take your note here ★★★**
+1.從main.o檔和qemu中觀察幾個register發現各個程式的任務：
+	1.r3適用於兩函數間數值之傳遞。
+	2.r7功用在於地址的取值與存值進入地址的連結,其中r0/sp類似其輔助。另外，r7還有另外的任務用於協助兩函數	地址的存放。
+	3.lr（linker register)與一般用法一樣，作為兩函數間branch的媒介。
+2.因為我設計的的程式因素，所以觀察其main.o中bl/bx/b.n的關係：程式會在這以下地址不段輪迴---00000000,00000026
+3.程式截圖：
+	！[第一次進入fn_try](/home/louyi/cllab/ESEmbedded_HW03/000.png)
+	！[第一次結束fn_try跳回主迴圈的情形](/home/louyi/cllab/ESEmbedded_HW03/001.png)
+
